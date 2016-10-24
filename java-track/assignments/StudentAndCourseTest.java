@@ -38,7 +38,7 @@ public class StudentAndCourseTest extends TestCase {
 		}
 	}
 
-	@Test
+@Test
 	public void testGetClassStanding() {
 		Student s = new Student("D", "S", 1);
 		for (int i = 0; i < 29; i++) {
@@ -73,11 +73,13 @@ public class StudentAndCourseTest extends TestCase {
 			double g = Math.random() * 4;//0 to 4
 			credits += c;
 			gpatotal += g * c;
+
 			s.submitGrade(g, c);
 			assertEquals("GPA computed incorrectly", gpatotal / credits, s.getGPA(), 0.01);
 			assertTrue("GPA not rounded", (s.getGPA() + "").length() < 6);
 		}
 	}
+	
 
 	@Test
 	public void testComputeTuition() {
@@ -95,6 +97,8 @@ public class StudentAndCourseTest extends TestCase {
 			assertEquals("Compute tution not working properly", 1333.33 * (i+1) + 20000.0, s.computeTuition());
 		}
 	}
+	
+	
 
 	@Test
 	public void testCreateLegacy() {
@@ -128,6 +132,7 @@ public class StudentAndCourseTest extends TestCase {
 
 		}
 	}
+	
 
 	@Test
 	public void testStudentToString() {
@@ -149,7 +154,7 @@ public class StudentAndCourseTest extends TestCase {
 	// TESTING COURSE CLASS HERE . . . FEEL FREE TO WRITE YOUR OWN, BUT DON'T CHANGE THIS ONE
 	// once again, we are watching you
 
-	@Test
+	@Test 
 	public void testCourseInit() {
 		Course c = new Course("CSE131", 1, 2);
 		assertEquals("CSE131", c.getName());
@@ -162,6 +167,8 @@ public class StudentAndCourseTest extends TestCase {
 			assertEquals("course getRemainingSeats() not working, or seats not being set properly", s, c2.getRemainingSeats());
 		}
 	}
+	
+	
 
 	@Test
 	public void testAddStudent() {
@@ -226,7 +233,7 @@ public class StudentAndCourseTest extends TestCase {
 			assertTrue("course toString does not contain credits", cc.toString().contains("" + c));
 		}
 	}
-
-
-
 }
+
+
+
